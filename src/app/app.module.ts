@@ -1,18 +1,52 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { ToastrModule } from 'ngx-toastr';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router'; 
+import { HttpClientModule} from '@angular/common/http';
+import { AngularFireModule } from '@angular/fire/compat';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
+
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule
+    FormsModule,
+    RouterModule,
+    HttpClientModule,
+    AppRoutingModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    ToastrModule.forRoot({
+      timeOut: 3000,
+      positionClass: 'toast-top-right',
+      preventDuplicates: true,
+    }),
+    BrowserAnimationsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule.enablePersistence(),
   ],
-  providers: [],
+  exports: [
+    AngularFirestoreModule
+  ],
+  providers: [ 
+    MatDatepickerModule,
+    MatNativeDateModule 
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

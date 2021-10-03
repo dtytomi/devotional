@@ -1,0 +1,52 @@
+<div class="columns">
+  <aside class="column is-2 aside hero is-fullheight is-hidden-mobile is-flex-direction-column">
+    <div>
+      <div class="main">
+        <div class="title" style="margin-top: -1rem;">Main</div>
+        <a routerLink="/dashboard" routerLinkActive="active" class="item">
+          <span class="name">Dashboard</span>
+        </a>
+        <a routerLink="/dashboard/add" routerLinkActive="active" class="item">
+          <span class="name">Add Devotional</span>
+        </a>
+        <div class="down">
+          <a  (click)="logout()" class="item">
+            <span class="name">Log Out</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="column is-10 admin-panel">
+    <nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/dashboard">
+          <img src="../../assets/img/bible.gif" alt="Devotional" width="112" height="28">
+        </a>
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="navbar-menu is-hidden-tablet">
+        <div class="navbar-end">
+          <a routerLink="/dashboard" routerLinkActive="active" class="nav-item is-active">
+            Dashboard
+          </a>
+          <a routerLink="/add" routerLinkActive="active" class="nav-item">
+            Add Devotional
+          </a>
+        </div>
+      </div>
+    </nav>
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

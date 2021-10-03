@@ -1,0 +1,39 @@
+<section class="hero is-success is-fullheight">
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <div class="column is-4 is-offset-4">
+                <h3 class="title has-text-black">Welcome Admin</h3>
+                <hr class="login-hr">
+                <p class="subtitle has-text-black">Create the word for today.</p>
+                <div class="box">
+                    <figure class="avatar">
+                        <img src='../../assets/img/bible.gif' width="120">
+                    </figure>
+                    <form >
+                        <div class="field">
+                            <div class="control">
+                                <input class="input is-large" name="email" [(ngModel)]="email" type="email" placeholder="Your Email" autofocus="">
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <div class="control">
+                                <input class="input is-large" name="password" [(ngModel)]="password" type="password" placeholder="Your Password">
+                            </div>
+                        </div>
+                        <div class="field is-grouped is-grouped-centered">
+                            <p class="control">
+                                <a class="button is-ghost" (click)="isOpen = !isOpen">{{isOpen ? 'Login Here' : 'Signup Here'}}</a>
+                            </p>
+                            <p class="control">
+                                <button *ngIf=" isOpen" (click)="signup()" [disabled]="!email || !password" class="button is-block is-active">SignUp <i class="fa fa-sign-in" aria-hidden="true"></i>
+                                </button>
+                                <button *ngIf="!isOpen" (click)="login()" [disabled]="!email || !password" class="button is-block is-info">Login <i class="fa fa-sign-in" aria-hidden="true"></i></button>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

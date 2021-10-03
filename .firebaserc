@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "myhustle-5d770": {
+      "hosting": {
+        "devotional": [
+          "myhustle-5d770"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "apostledoctrine-8c83f"
+  }
+}

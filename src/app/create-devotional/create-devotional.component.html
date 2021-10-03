@@ -1,0 +1,41 @@
+<div>
+  <form [formGroup]="devotionalForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="outline">
+      <mat-label>Choose a date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="day">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <p>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Topic</mat-label>
+        <input matInput placeholder="Wisdom" formControlName="title">
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Biblical Reference</mat-label>
+        <input matInput placeholder="James 1:5, ..." formControlName="bible_references">
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Action Point</mat-label>
+        <input matInput placeholder="James 1:5, ..." formControlName="action_point">
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Prayer</mat-label>
+        <input matInput placeholder="James 1:5, ..." formControlName="prayer_point">
+      </mat-form-field>
+    </p>    
+    <p>
+      <angular-editor [placeholder]="'Enter text here...'" formControlName="htmlContent" name="htmlContent" [config]="editorConfig" ></angular-editor>
+    </p>
+    <p class="is-pulled-right">
+      <button mat-raised-button color="primary" [disabled]="!devotionalForm.valid">Submit</button>
+    </p>
+  </form>
+</div>
