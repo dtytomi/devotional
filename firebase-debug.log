@@ -74,3 +74,155 @@
     }
   }
 }
+[debug] [2021-10-04T14:39:36.180Z] ----------------------------------------------------------------------
+[debug] [2021-10-04T14:39:36.181Z] Command:       /home/labsandware/.nvm/versions/node/v14.17.1/bin/node /home/labsandware/Documents/Source/webapp/devotional/node_modules/.bin/firebase deploy --only hosting
+[debug] [2021-10-04T14:39:36.181Z] CLI Version:   7.1.1
+[debug] [2021-10-04T14:39:36.181Z] Platform:      linux
+[debug] [2021-10-04T14:39:36.181Z] Node Version:  v14.17.1
+[debug] [2021-10-04T14:39:36.181Z] Time:          Mon Oct 04 2021 15:39:36 GMT+0100 (West Africa Standard Time)
+[debug] [2021-10-04T14:39:36.181Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-10-04T14:39:36.187Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-10-04T14:39:36.187Z] > authorizing via signed-in user
+[debug] [2021-10-04T14:39:36.187Z] [iam] checking project apostledoctrine-8c83f for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2021-10-04T14:39:36.188Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/apostledoctrine-8c83f:testIamPermissions  
+
+[debug] [2021-10-04T14:39:38.096Z] <<< HTTP RESPONSE 200
+[debug] [2021-10-04T14:39:38.103Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/apostledoctrine-8c83f  
+ 
+[debug] [2021-10-04T14:39:38.740Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'apostledoctrine-8c83f'...
+[info] 
+[info] i  deploying hosting
+[debug] [2021-10-04T14:39:38.747Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/apostledoctrine-8c83f-default-rtdb/versions  
+
+[debug] [2021-10-04T14:39:40.717Z] <<< HTTP RESPONSE 500
+[debug] [2021-10-04T14:39:40.717Z] <<< HTTP RESPONSE BODY
+[error] 
+[error] Error: HTTP Error: 500, Internal error encountered.
+[debug] [2021-10-04T14:39:40.725Z] Error Context: {
+  "body": {
+    "error": {
+      "code": 500,
+      "message": "Internal error encountered.",
+      "status": "INTERNAL"
+    }
+  },
+  "response": {
+    "statusCode": 500,
+    "body": {
+      "error": {
+        "code": 500,
+        "message": "Internal error encountered.",
+        "status": "INTERNAL"
+      }
+    },
+    "headers": {
+      "vary": "X-Origin, Referer, Origin,Accept-Encoding",
+      "content-type": "application/json; charset=UTF-8",
+      "date": "Mon, 04 Oct 2021 14:39:40 GMT",
+      "server": "ESF",
+      "cache-control": "private",
+      "x-xss-protection": "0",
+      "x-frame-options": "SAMEORIGIN",
+      "x-content-type-options": "nosniff",
+      "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"",
+      "accept-ranges": "none",
+      "transfer-encoding": "chunked"
+    },
+    "request": {
+      "uri": {
+        "protocol": "https:",
+        "slashes": true,
+        "auth": null,
+        "host": "firebasehosting.googleapis.com",
+        "port": 443,
+        "hostname": "firebasehosting.googleapis.com",
+        "hash": null,
+        "search": null,
+        "query": null,
+        "pathname": "/v1beta1/sites/apostledoctrine-8c83f-default-rtdb/versions",
+        "path": "/v1beta1/sites/apostledoctrine-8c83f-default-rtdb/versions",
+        "href": "https://firebasehosting.googleapis.com/v1beta1/sites/apostledoctrine-8c83f-default-rtdb/versions"
+      },
+      "method": "POST"
+    }
+  }
+}
+[debug] [2021-10-04T14:56:17.641Z] ----------------------------------------------------------------------
+[debug] [2021-10-04T14:56:17.648Z] Command:       /home/labsandware/.nvm/versions/node/v14.17.1/bin/node /home/labsandware/Documents/Source/webapp/devotional/node_modules/.bin/firebase deploy --only hosting
+[debug] [2021-10-04T14:56:17.649Z] CLI Version:   7.1.1
+[debug] [2021-10-04T14:56:17.649Z] Platform:      linux
+[debug] [2021-10-04T14:56:17.649Z] Node Version:  v14.17.1
+[debug] [2021-10-04T14:56:17.830Z] Time:          Mon Oct 04 2021 15:56:17 GMT+0100 (West Africa Standard Time)
+[debug] [2021-10-04T14:56:17.831Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-10-04T14:56:18.008Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-10-04T14:56:18.009Z] > authorizing via signed-in user
+[debug] [2021-10-04T14:56:18.009Z] [iam] checking project apostledoctrine-8c83f for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2021-10-04T14:56:18.014Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/apostledoctrine-8c83f:testIamPermissions  
+
+[debug] [2021-10-04T14:56:22.168Z] <<< HTTP RESPONSE 200
+[debug] [2021-10-04T14:56:22.175Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/apostledoctrine-8c83f  
+ 
+[debug] [2021-10-04T14:56:23.259Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'apostledoctrine-8c83f'...
+[info] 
+[info] i  deploying hosting
+[debug] [2021-10-04T14:56:23.271Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/apostledoctrine-8c83f-default-rtdb/versions  
+
+[debug] [2021-10-04T14:56:24.985Z] <<< HTTP RESPONSE 500
+[debug] [2021-10-04T14:56:24.985Z] <<< HTTP RESPONSE BODY
+[error] 
+[error] Error: HTTP Error: 500, Internal error encountered.
+[debug] [2021-10-04T14:56:24.993Z] Error Context: {
+  "body": {
+    "error": {
+      "code": 500,
+      "message": "Internal error encountered.",
+      "status": "INTERNAL"
+    }
+  },
+  "response": {
+    "statusCode": 500,
+    "body": {
+      "error": {
+        "code": 500,
+        "message": "Internal error encountered.",
+        "status": "INTERNAL"
+      }
+    },
+    "headers": {
+      "vary": "X-Origin, Referer, Origin,Accept-Encoding",
+      "content-type": "application/json; charset=UTF-8",
+      "date": "Mon, 04 Oct 2021 14:56:24 GMT",
+      "server": "ESF",
+      "cache-control": "private",
+      "x-xss-protection": "0",
+      "x-frame-options": "SAMEORIGIN",
+      "x-content-type-options": "nosniff",
+      "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"",
+      "accept-ranges": "none",
+      "transfer-encoding": "chunked"
+    },
+    "request": {
+      "uri": {
+        "protocol": "https:",
+        "slashes": true,
+        "auth": null,
+        "host": "firebasehosting.googleapis.com",
+        "port": 443,
+        "hostname": "firebasehosting.googleapis.com",
+        "hash": null,
+        "search": null,
+        "query": null,
+        "pathname": "/v1beta1/sites/apostledoctrine-8c83f-default-rtdb/versions",
+        "path": "/v1beta1/sites/apostledoctrine-8c83f-default-rtdb/versions",
+        "href": "https://firebasehosting.googleapis.com/v1beta1/sites/apostledoctrine-8c83f-default-rtdb/versions"
+      },
+      "method": "POST"
+    }
+  }
+}

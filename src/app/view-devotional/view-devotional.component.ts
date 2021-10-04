@@ -22,7 +22,6 @@ export class ViewDevotionalComponent implements  OnDestroy {
       this.subscription = devotionalService.setDevotional$.subscribe(
           devotional => {
             this.devotional = devotional;
-            this.day =  new Date(devotional.day).toDateString();
           }
         )
 
