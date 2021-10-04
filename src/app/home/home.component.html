@@ -1,17 +1,16 @@
 <div class="columns is-mobile is-centered">
   <div class="column is-three-quarters">
-    <mat-card *ngFor="let devotional of devotionals | async">{{devotional.title}}</mat-card>
-    <div class="card">
+    <div class="card m-2" *ngFor="let devotional of devotionals | async">
       <header class="card-header">
         <p class="card-header-title">
-          Card header
+          {{devotional.title}}
         </p>
-        <button class="card-header-icon" aria-label="more options">
+        <a class="card-header-icon" (click)="setDevtionalView(devotional)" aria-label="more options">
           <span class="icon is-medium has-text-info">
             <fa-icon [icon]="faExternalLinkAlt"></fa-icon>
           </span>
-        </button>
-        <button class="card-header-icon" aria-label="more options">
+        </a>
+        <button (click)="delete(devotional.id)" class="card-header-icon" aria-label="more options">
           <span class="icon is-medium has-text-danger">
             <fa-icon [icon]="faMinusCircle"></fa-icon>
           </span>
@@ -23,7 +22,6 @@
         </button> -->
       </header>
     </div>
-
     <!-- <mat-paginator [length]="100"
                   [pageSize]="10"
                   [pageSizeOptions]="[5, 10, 25, 100]"

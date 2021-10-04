@@ -8,6 +8,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MomentDateModule } from '@angular/material-moment-adapter';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -27,8 +28,9 @@ import { environment } from '../environments/environment';
   imports: [
     FormsModule,
     RouterModule,
-    HttpClientModule,
     AppRoutingModule,
+    HttpClientModule,
+    MomentDateModule,
     MatDatepickerModule,
     MatNativeDateModule,
     ToastrModule.forRoot({

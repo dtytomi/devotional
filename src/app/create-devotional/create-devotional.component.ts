@@ -1,16 +1,38 @@
 import { Observable } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
-import { AngularFirestore, 
-  AngularFirestoreDocument, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
+import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
+import { MomentDateAdapter } from '@angular/material-moment-adapter';
 
 import { Devotional } from '../_models/devotional.model';
+import { DevotionalService } from '../_services/devotional.service';
+
+import * as _moment from 'moment';
+const moment = _moment;  
+
+export const DATE_FORMATS = {
+
+    parse: {
+      dateInput: 'DD/MM/YYYY',
+    },
+
+    display: {
+      dateInput: 'DD/MM/YYYY',
+      monthYearLabel: 'MMMM YYYY',
+      dateA11yLabel: 'LL',
+      monthYearA11yLabel: 'MMMM YYYY'
+    },
+};
 
 @Component({
   selector: 'app-create-devotional',
   templateUrl: './create-devotional.component.html',
-  styleUrls: ['./create-devotional.component.css']
+  styleUrls: ['./create-devotional.component.css'],
+  providers: [
+    { provide: MAT_DATE_FORMATS, useValue: DATE_FORMATS },
+  ]
 })
 export class CreateDevotionalComponent implements OnInit {
 
@@ -50,29 +72,23 @@ export class CreateDevotionalComponent implements OnInit {
     ]
   };
 
+  today: any = new Date();
+
   devotionalForm = new FormGroup({
-    day: new FormControl(''),
+    day: new FormControl(moment().format('LL')),
     title: new FormControl(''),
     bible_references: new FormControl(''),
     htmlContent: new FormControl(''),
+    action_point: new FormControl(''),
+    prayer_point: new FormControl('')
   });
 
-  private devotionalDoc: AngularFirestoreDocument<Devotional>;
-  devotional: Observable<Devotional | null | undefined>;
-
-
-  private devotionalsCollection: AngularFirestoreCollection<Devotional>;
-  devotionals: Observable<Devotional[]>;
+  submitted = false;
   
 
-  constructor(private afs: AngularFirestore) {
-
-    this.devotionalDoc = afs.doc<Devotional>('devotionals/1');
-    this.devotional = this.devotionalDoc.valueChanges(['added', 'removed']);
-
-    this.devotionalsCollection = afs.collection<Devotional>('items');
-    this.devotionals = this.devotionalsCollection.valueChanges();
-  }
+  constructor(private devotionalService: DevotionalService,
+    private toastrService: ToastrService
+  ) { }
 
   ngOnInit(): void {
   }
@@ -80,11 +96,16 @@ export class CreateDevotionalComponent implements OnInit {
   onSubmit() {
     // TODO: Use EventEmitter with form value
     console.warn(this.devotionalForm.value);
-    this.devotionalsCollection.add(this.devotionalForm.value);
+    this.devotionalService.create(this.devotionalForm.value).then(() => {
+      this.toastrService.success(
+        'Created new devotional successfully!', 
+        'Submitted: true');
+      this.submitted = true;
+    });
   }
 
-  update(devotional: Devotional) {
-    this.devotionalDoc.update(devotional);
+  update() {
+    // this.devotionalDoc.update(devotional);
   }
 
 }

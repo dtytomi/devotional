@@ -44,3 +44,8 @@
   position: absolute;
   bottom: 10px;
 }
+
+.box-overflow {
+  overflow-x: hidden;
+  overflow-y: auto;
+}

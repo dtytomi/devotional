@@ -3,11 +3,41 @@
     <div class="card">
       <div class="card-content">
         <div class="content has-text-justified">
-          <h5 style="color:orange;text-align: center">{{this.Title}}</h5>    
-          <hr style="color: blue;">    
-          <span>     
-            <div style="color:#788594" [innerHTML]="this.content"></div>    
-          </span> 
+          <dl class="columns">
+            <dt class="column is-3">
+              <h6 class="title is-6 has-text-weight-bold">Topic</h6>
+            </dt>
+            <dd class="column is-4">
+              <h4>{{devotional.title}}</h4>
+            </dd>
+            <dd class="column is-4">
+              <h4>{{devotional.day.toDate()  | date}}</h4>
+            </dd>
+          </dl>
+          <dl class="columns">
+            <dt class="column is-3">
+              <h6 class="title is-6 has-text-weight-bold">Bible Reference</h6>
+            </dt>
+            <dd class="column is-9">
+              <h4>{{devotional.bible_references}}</h4>
+            </dd>
+          </dl>
+          <dl class="columns">
+            <dt class="column is-3">
+              <h6 class="title is-6 has-text-weight-bold">Action Point</h6>
+            </dt>
+            <dd class="column is-9">{{devotional.action_point}}</dd>
+          </dl>
+          <dl class="columns">
+            <dt class="column is-3">
+              <h6 class="title is-6 has-text-weight-bold">Prayer Point</h6>
+            </dt>
+            <dd class="column is-9">{{devotional.prayer_point}}</dd>
+          </dl>
+          <dl class="columns">
+            <dt class="column is-3 text-truncate"></dt>
+            <dd class="column is-9"><div style="color:#788594" [innerHTML]="devotional.htmlContent"></div></dd>
+          </dl>
         </div>
       </div>
     </div>    

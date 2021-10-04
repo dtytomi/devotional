@@ -1,8 +1,8 @@
 export interface Devotional { 
-  day: string;
+  day: Date;
   title: string;
   bible_references: string;
-  action_point: string,
-  prayer_point: string,
+  action_point: string;
+  prayer_point: string;
   htmlContent: any;
 }
