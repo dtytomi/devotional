@@ -1,17 +1,10 @@
 {
   "hosting": {
-    "site": "devotional",
-    "public": "public",
+    "public": "dist/devotional",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
     ]
   },
   "database": {
